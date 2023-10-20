@@ -1,1 +1,1 @@
-# helm chart examples
+# pages static html
