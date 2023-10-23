@@ -2,8 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "prometheus.fullname" . }}
-  labels:
   namespace: monitoring
+  labels:
     {{- include "prometheus.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
