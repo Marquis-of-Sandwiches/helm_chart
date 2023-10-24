@@ -9,7 +9,7 @@ entries:
     name: prometheus
     type: application
     urls:
-    - prometheus-0.3.0.tgz
+    - charts/prometheus-0.3.0.tgz
     version: 0.3.0
   - apiVersion: v2
     appVersion: 2.47.2
@@ -19,7 +19,7 @@ entries:
     name: prometheus
     type: application
     urls:
-    - prometheus-0.2.0.tgz
+    - charts/prometheus-0.2.0.tgz
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
@@ -29,6 +29,6 @@ entries:
     name: prometheus
     type: application
     urls:
-    - prometheus-0.1.0.tgz
+    - charts/prometheus-0.1.0.tgz
     version: 0.1.0
 generated: "2023-10-24T16:09:31.658291061-07:00"
