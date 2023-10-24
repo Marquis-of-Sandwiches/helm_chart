@@ -86,3 +86,33 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+persistence:
+  enabled: true
+  extraVolumes:
+  - name1: self-signing-ca
+    namespace1: monitoring
+    configMap:
+      name: self-signing-ca
+      defaultMode: 0555
+  - name2: prometheus-config
+    namespace: monitoring
+    configMap:
+      name: prometheus-config
+      defaultMode: 0755 
+  - name3: nfs1
+    namespace: monitoring
+    nfs.server: 192.168.122.1
+    storageClassName: local
+    persistentVolumePath: /var/lib/disks/disk1 
+  extraVolumeMounts:
+  - name: self-signing-ca
+    mountPath: /etc/self-signed
+    readOnly: true
+  - name: prometheus-setup
+    mountPath: /etc/config
+    readOnly: false
+  - name: nfs1
+    mountPath: /data
+    readOnly: false
+
