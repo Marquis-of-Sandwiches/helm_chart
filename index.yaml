@@ -3,7 +3,17 @@ entries:
   prometheus:
   - apiVersion: v2
     appVersion: 2.47.2
-    created: "2023-10-24T16:09:31.659782779-07:00"
+    created: "2023-10-24T17:53:37.823764825-07:00"
+    description: A Helm chart for Kubernetes
+    digest: ff97ed640909e0ce9f37fb827511cda9c0fd6a282a0e7fb667f6fb43ac17eab9
+    name: prometheus
+    type: application
+    urls:
+    - charts/prometheus-0.3.1.tgz
+    version: 0.3.1
+  - apiVersion: v2
+    appVersion: 2.47.2
+    created: "2023-10-24T17:53:37.823351609-07:00"
     description: A Helm chart for Kubernetes
     digest: bf4cc8226ab0d378dbc540023c0fbbf0cb153c1d9aa1605e01a59069a32e097f
     name: prometheus
@@ -13,7 +23,7 @@ entries:
     version: 0.3.0
   - apiVersion: v2
     appVersion: 2.47.2
-    created: "2023-10-24T16:09:31.659470593-07:00"
+    created: "2023-10-24T17:53:37.822746291-07:00"
     description: A Helm chart for Kubernetes
     digest: 802a5a15877857d1d9150124f41eb0c1b87d4617eaba76612365787f0c96884c
     name: prometheus
@@ -23,7 +33,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-10-24T16:09:31.659083708-07:00"
+    created: "2023-10-24T17:53:37.822443042-07:00"
     description: A Helm chart for Kubernetes
     digest: 9759309ab3461e407d31143f5eac9deea63221f3c0c4453a4027b85a899cc83e
     name: prometheus
@@ -31,4 +41,4 @@ entries:
     urls:
     - charts/prometheus-0.1.0.tgz
     version: 0.1.0
-generated: "2023-10-24T16:09:31.658291061-07:00"
+generated: "2023-10-24T17:53:37.822047759-07:00"
