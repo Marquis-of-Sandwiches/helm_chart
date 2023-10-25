@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 github:
   user: marquis-of-sandwiches
-  token: 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
+  token: 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
 
 
 replicaCount: 1
@@ -14,7 +14,7 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: "1.0"
   imagePullSecrets:
-  - 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
+  - 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
 #imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: "mp-prometheus"
