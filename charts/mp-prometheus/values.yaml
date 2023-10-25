@@ -13,7 +13,11 @@ image:
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "1.0"
-  imagePullSecrets:
+imageCredentials:
+  registry: ghcr.io
+  username: marquis-of-sandwiches
+  password: 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
+imagePullSecrets:
   - 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
 #imagePullSecrets: []
 nameOverride: ""
