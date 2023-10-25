@@ -3,12 +3,12 @@ entries:
   prometheus:
   - apiVersion: v2
     appVersion: 2.47.2
-    created: "2023-10-24T21:03:15.796136103-07:00"
+    created: "2023-10-24T21:10:39.104586601-07:00"
     description: A Helm chart for Kubernetes
-    digest: 6d142c7302b9afaf3a66d3d05a27b72a928c22fd149e5038b4d2e81f29a1f54b
+    digest: 0b23797865e38fbad325a1059ebe37a7aa92c3c073dacda6fcf4e1c627255beb
     name: prometheus
     type: application
     urls:
     - charts/prometheus-0.3.4.tgz
     version: 0.3.4
-generated: "2023-10-24T21:03:15.795742053-07:00"
+generated: "2023-10-24T21:10:39.104169298-07:00"
