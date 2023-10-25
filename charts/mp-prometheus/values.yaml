@@ -17,7 +17,7 @@ image:
   - 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
 #imagePullSecrets: []
 nameOverride: ""
-fullnameOverride: "mp-prometheus:1.0"
+fullnameOverride: "mp-prometheus"
 
 serviceAccount:
   # Specifies whether a service account should be created
