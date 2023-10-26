@@ -46,7 +46,7 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           #image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           image: "{{ .Values.image.repository }}:1.0"
-          command: {{ - .Values.command | toYaml | nindent 12 }}
+          command: {{- toYaml .Values.command | nindent 12 }}
           volumeMounts:
           - name: nfs-1
             mountPath: /data
