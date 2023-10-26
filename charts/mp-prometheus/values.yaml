@@ -17,14 +17,12 @@ image:
   - /bin/sh
   - -c
   - sleep 10000
-  pullSecrets:
-   - regcred  
 #imageCredentials:
 #  registry: ghcr.io
 #  username: marquis-of-sandwiches
 #  password: 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
-#imagePullSecrets:
-
+imagePullSecrets:
+  - regcred
 #imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: "mp-prometheus"
