@@ -156,7 +156,7 @@ data:
      static_configs:
        - targets: ['localhost:9090']
 
-  #xn7QPmltBTYCAL9W
+ 
  tls-exp-config: |
     tls_server_config:
       cert_file: /var/lib/exporter/host-cert.pem
@@ -166,8 +166,8 @@ data:
     http_server_config:
         http2: true
     basic_auth_users:
-      mysql_scraper: $2y$10$ceWi.sGiQO5a.2/x7UOeMe8BitcbC1gAgDkJtNau2OAHoUwmKxsbO
-#G@Greenin2023
+      mysql_scraper: $hashedpassword1
+
  tls-prom-config: |
     tls_server_config:
       cert_file: /data/host-cert.pem
@@ -177,8 +177,8 @@ data:
     http_server_config:
         http2: false
     basic_auth_users:
-      mysql_scraper: $2y$10$ceWi.sGiQO5a.2/x7UOeMe8BitcbC1gAgDkJtNau2OAHoUwmKxsbO
-      edify_admin: $2b$12$pWHhP4q7CiCfbVKvF/gVH.X0OdS1Rq.3lh4epn4x953umi2jkqy86
+      mysql_scraper: $hashedpassword1
+      edify_admin: $hashedpassword2
  
  kubeconfig: |
    clusters:
