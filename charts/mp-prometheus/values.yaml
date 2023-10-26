@@ -22,7 +22,7 @@ image:
 #  username: marquis-of-sandwiches
 #  password: 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
 imagePullSecrets:
-  - regcred
+  - name: regcred
 #imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: "mp-prometheus"
