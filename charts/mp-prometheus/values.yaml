@@ -9,7 +9,7 @@ github:
 replicaCount: 1
 
 image:
-  repository: ghcr.io/marquis-of-sandwiches/docker_example/mp-prometheus
+  repository: ghcr.io/marquis-of-sandwiches/mp-prometheus
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "1.0"
