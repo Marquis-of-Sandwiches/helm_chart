@@ -29,17 +29,18 @@ spec:
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       volumes:
-      - name: self-signing-ca
-        configMap:
-         name: self-signing-ca
-      - name: prometheus-setup
-        configMap:
-         name: prometheus-setup
-      - name: nfs-1
-        nfs:
-          server: 192.168.122.1
-          path: /var/lib/disks/disk1
-          readOnly: false
+        {{- toYaml .extraValues.extraVolumes | default "" | nindent 8 }} 
+      #- name: self-signing-ca
+      #  configMap:
+      #   name: self-signing-ca
+      #- name: prometheus-setup
+      #  configMap:
+      #   name: prometheus-setup
+      #- name: nfs-1
+      #  nfs:
+      #    server: 192.168.122.1
+      #    path: /var/lib/disks/disk1
+      #    readOnly: false
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
@@ -48,15 +49,16 @@ spec:
           image: "{{ .Values.image.repository }}:1.0"
           command: {{- toYaml .Values.command | nindent 12 }}
           volumeMounts:
-          - name: nfs-1
-            mountPath: /data
-            readOnly: false
-          - name: prometheus-setup
-            mountPath: /etc/config
-            readOnly: true
-          - name: self-signing-ca
-            mountPath: /etc/self-signed
-            readOnly: true
+            {{- toYaml .extraValues.extraVolumeMounts | default "" | nindent 12 }} 
+          #- name: nfs-1
+          #  mountPath: /data
+          #  readOnly: false
+          #- name: prometheus-setup
+          #  mountPath: /etc/config
+          #  readOnly: true
+          #- name: self-signing-ca
+          #  mountPath: /etc/self-signed
+          #  readOnly: true
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: prometheus1

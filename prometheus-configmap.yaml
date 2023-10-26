@@ -53,16 +53,16 @@ data:
      echo "DNS.12 = alert-manager-lb" >> /tmp/extfile.cnf
 
      echo "$KEY_SECRET" | openssl x509 -req -in $DATA_PATH/server-req.pem -days 3600 -CA $SSL_PATH/self-signed-CA.pem -CAkey $SSL_PATH/self-signed-CA-key.pem -passin stdin -CAcreateserial -CAserial $DATA_PATH/self-signed-CA.srl -out $DATA_PATH/host-cert.pem -extfile /tmp/extfile.cnf
-    
+    #https://dl.k8s.io/v1.28.3/kubernetes-client-linux-amd64.tar.gz
     for r in \
     "chown runner $DATA_PATH/*.pem && chgrp runner $DATA_PATH/*.pem && chmod 660 $DATA_PATH/*.pem" \
     " /bin/cp -f ${SSL_PATH}/self-signed-CA.pem  ${DATA_PATH}/" \
-    "cp $DATA_PATH/*.pem /var/lib/exporter/ && chown exporter /var/lib/exporter/*.pem && chgrp  exporter /var/lib/exporter/*.pem && chmod 660 /var/lib/exporter/*.pem" \
     "cat ${DATA_PATH}/host-cert.pem ${DATA_PATH}/self-signed-CA.pem > ${DATA_PATH}/combined-certs.pem " \
     "wget --directory-prefix=/tmp --no-verbose https://storage.googleapis.com/kubernetes-release/release/stable.txt" \
-    "wget --directory-prefix=/tmp --no-verbose https://dl.k8s.io/release/"$(cat /tmp/stable.txt)"/bin/linux/"$PROM_CPU"/kubectl " \
-    "mv /tmp/kubectl /usr/local/bin && chmod +x /usr/local/bin/kubectl"  \
-    'touch /data/exporter.log && chown exporter:exporter /data/exporter.log && chmod 660 /data/exporter.log'  ; do 
+    "wget --directory-prefix=/tmp --no-verbose https://dl.k8s.io/"$(cat /tmp/stable.txt)"/kubernetes-client-linux-"$PROM_CPU".tar.gz " \
+    "tar -xvf /tmp/kubernetes-client-linux-"$PROM_CPU".tar.gz" \
+    "mv /kubernetes/client/bin/* /usr/local/bin" \
+    "chmod +x /usr/local/bin/kube*" ; do 
     echo $r && eval "${r}"
     done
 
