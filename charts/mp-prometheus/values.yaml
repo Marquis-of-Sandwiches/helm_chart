@@ -25,7 +25,7 @@ imagePullSecrets:
   - name: regcred
 #imagePullSecrets: []
 nameOverride: ""
-fullnameOverride: "mp-prometheus"
+#fullnameOverride: "mp-prometheus"
 
 serviceAccount:
   # Specifies whether a service account should be created
