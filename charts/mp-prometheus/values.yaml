@@ -99,10 +99,6 @@ affinity: {}
 #persistence:
 #  enabled: true
 extraConfig:
-  initScripts: 
-    my_init_script:
-      #!/bin/sh
-      sleep 100000
   extraVolumes:
   - name1: self-signing-ca
     namespace1: monitoring
