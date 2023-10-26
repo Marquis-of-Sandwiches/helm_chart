@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-pv-volume1
+  labels:
+    type: local1
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 2Gi
+  accessModes:
+    - ReadWriteMany
+ # persistentVolumeReclaimPolicy: Retain
+  nfs:
+    path: /var/lib/disks/disk1
+    server: 192.168.122.1
+    readOnly: false
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-pv-volume2
+  labels:
+    type: local2
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 2Gi
+  accessModes:
+    - ReadWriteMany
+ # persistentVolumeReclaimPolicy: Retain
+  nfs:
+    path: /var/lib/disks/disk2
+    server: 192.168.122.1
+    readOnly: false
+
