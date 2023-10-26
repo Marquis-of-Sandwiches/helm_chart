@@ -29,7 +29,17 @@ spec:
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       volumes:
-        {{- toYaml .Values.extraVolumes | default "" | nindent 8 }} 
+        {{- if contains  (toYaml .Values.extraVolumes) "nfs"  }}
+          StorageClassName: local
+            mountOptions:
+              - hard
+              - nfsver=4.1
+              - timeo=600
+              - retrans=2
+         {{ toYaml .Values.extraVolumes | default "" | nindent 8 }}  
+        {{- else }}
+           {{ toYaml .Values.extraVolumes | default "" | nindent 8 }} 
+        {{- end }}
       #- name: self-signing-ca
       #  configMap:
       #   name: self-signing-ca

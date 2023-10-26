@@ -101,20 +101,17 @@ affinity: {}
 
 extraVolumes:
   - name: self-signing-ca
-    namespace: monitoring
     configMap:
       name: self-signing-ca
       defaultMode: 0555
-  - name: prometheus-config
-    namespace: monitoring
+  - name: prometheus-setup
     configMap:
-      name: prometheus-config
+      name: prometheus-setup
       defaultMode: 0755 
   - name: nfs1
-    namespace: monitoring
-    nfs.server: 192.168.122.1
-    storageClassName: local
-    persistentVolumePath: /var/lib/disks/disk1 
+    nfs:
+      server: 192.168.122.1
+      path: /var/lib/disks/disk1 
 extraVolumeMounts:
   - name: self-signing-ca
     mountPath: /etc/self-signed
