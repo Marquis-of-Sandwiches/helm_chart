@@ -13,12 +13,18 @@ image:
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "1.0"
-imageCredentials:
-  registry: ghcr.io
-  username: marquis-of-sandwiches
-  password: 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
-#imagePullSecrets:
-#  - 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
+  args:
+  - /bin/sh
+  - -c
+  - sleep 10000
+  
+#imageCredentials:
+#  registry: ghcr.io
+#  username: marquis-of-sandwiches
+#  password: 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
+imagePullSecrets:
+  - regcred
+
 #imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: "mp-prometheus"
@@ -91,8 +97,13 @@ tolerations: []
 
 affinity: {}
 
-persistence:
-  enabled: true
+#persistence:
+#  enabled: true
+extraConfig:
+  initScripts: 
+    my_init_script:
+      #!/bin/sh
+      sleep 100000
   extraVolumes:
   - name1: self-signing-ca
     namespace1: monitoring
