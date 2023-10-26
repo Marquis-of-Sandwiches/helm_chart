@@ -13,9 +13,10 @@ image:
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "1.0"
-  args:
+
+command:
   - /bin/sh
-  - -c
+  - -c  
   - sleep 10000
 #imageCredentials:
 #  registry: ghcr.io
