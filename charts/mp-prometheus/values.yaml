@@ -17,13 +17,13 @@ image:
   - /bin/sh
   - -c
   - sleep 10000
-  
+  pullSecrets:
+   - regcred  
 #imageCredentials:
 #  registry: ghcr.io
 #  username: marquis-of-sandwiches
 #  password: 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
-imagePullSecrets:
-  - regcred
+#imagePullSecrets:
 
 #imagePullSecrets: []
 nameOverride: ""
