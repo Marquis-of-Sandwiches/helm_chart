@@ -101,7 +101,7 @@ affinity: {}
 
 extraVolumes:
   - name: self-signing-ca
-    namespace1: monitoring
+    namespace: monitoring
     configMap:
       name: self-signing-ca
       defaultMode: 0555
